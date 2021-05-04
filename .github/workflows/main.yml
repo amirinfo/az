@@ -1,0 +1,18 @@
+### clone the eNB/UE source code
+$ git clone https://gitlab.eurecom.fr/oai/openairinterface5g.git 
+
+### checkout branch to tag 2020.w03
+### (the lte-softmodem we used is in the lte_build_oai file 
+### which does not exist in the latest develop brnach)
+$ cd ~/openairinterface5g
+$ git checkout 2020.w03
+$ cd ~/openairinterface5g/cmake_targets
+
+### build first time
+$ sudo ./build_oai -I 
+
+### after build  -I change branch to develop-nb-iot 
+$ git checkout develop-nb-iot
+
+### build NB-IoT eNB
+$ sudo ./build_oai -I --eNB -w USRP
